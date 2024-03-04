@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        speak() {
+          console.log("name:" + this.name);
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, grade) {
+          super(name, age);
+          this.grade = grade;
+        }
+      }
+      const p1 = new Student("tom", 18, "three");
+      p1.speak();
+      console.log(p1);
+    </script>
+  </body>
+</html>
