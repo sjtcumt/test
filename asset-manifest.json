@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/knight/static/css/main.fa42e3a1.css",
+    "main.js": "/knight/static/js/main.25a0fec7.js",
+    "index.html": "/knight/index.html",
+    "main.fa42e3a1.css.map": "/knight/static/css/main.fa42e3a1.css.map",
+    "main.25a0fec7.js.map": "/knight/static/js/main.25a0fec7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa42e3a1.css",
+    "static/js/main.25a0fec7.js"
+  ]
+}
