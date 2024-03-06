@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel">
+    class Person extends React.Component {
+
+      showData = () => {
+        const { input1 } = this
+        alert(input1.value)
+      }
+
+      render() {
+        return (
+          <div>
+            <input ref={(a) => { this.input1 = a }} type="text" placeholder='info' />
+            <button ref='btn100' onClick={this.showData}>Go</button>
+          </div>)
+      }
+    }
+    ReactDOM.render(<Person />, document.getElementById("test"));
+  </script>
+</body>
+
+</html>

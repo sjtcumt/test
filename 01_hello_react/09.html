@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel">
+    class Person extends React.Component {
+      handleSubmit = (event) => {
+        event.preventDefault();
+        const { name, pass } = this
+        console.log(name, pass)
+      }
+
+      render() {
+        return (
+          // <form action="http://www.atguigu.com">
+          <form action="#" onSubmit={this.handleSubmit}>
+            name:<input ref={c => this.name = c} type="text" name="name" />
+            pass:<input ref={c => this.pass = c} type="text" name="pass" />
+            <button>Go</button>
+          </form>
+        )
+      }
+    }
+    ReactDOM.render(<Person />, document.getElementById("test"));
+  </script>
+</body>
+
+</html>

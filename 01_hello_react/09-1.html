@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="test"></div>
+
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Person extends React.Component {
+        state = {
+          name: "",
+          pass: "",
+        };
+        handleSubmit = (event) => {
+          event.preventDefault();
+          const { name, pass } = this.state;
+          alert(name + pass);
+        };
+
+        saveName = (e) => {
+          console.log(e.target.value);
+          this.setState({ name: e.target.value });
+        };
+
+        savePass = (e) => {
+          console.log(e.target.value);
+          this.setState({ pass: e.target.value });
+        };
+        render() {
+          return (
+            // <form action="http://www.atguigu.com">
+            <form action="#" onSubmit={this.handleSubmit}>
+              name:
+              <input onChange={this.saveName} type="text" name="name" />
+              pass:
+              <input onChange={this.savePass} type="text" name="pass" />
+              <button>Go</button>
+            </form>
+          );
+        }
+      }
+      ReactDOM.render(<Person />, document.getElementById("test"));
+    </script>
+  </body>
+</html>
