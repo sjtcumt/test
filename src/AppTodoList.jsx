@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import List from "./components/List";
 import Footer from "./components/Footer";
 
-export default class App extends Component {
+export default class AppTodoList extends Component {
   state = {
     todos: [
       { id: "001", kind: "food", done: true },
