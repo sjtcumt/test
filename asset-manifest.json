@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/knight/static/css/main.17819a43.css",
-    "main.js": "/knight/static/js/main.1743f157.js",
+    "main.js": "/knight/static/js/main.cfe9376c.js",
     "index.html": "/knight/index.html",
     "main.17819a43.css.map": "/knight/static/css/main.17819a43.css.map",
-    "main.1743f157.js.map": "/knight/static/js/main.1743f157.js.map"
+    "main.cfe9376c.js.map": "/knight/static/js/main.cfe9376c.js.map"
   },
   "entrypoints": [
     "static/css/main.17819a43.css",
-    "static/js/main.1743f157.js"
+    "static/js/main.cfe9376c.js"
   ]
 }
