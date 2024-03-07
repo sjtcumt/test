@@ -11,7 +11,9 @@ export default class Search extends Component {
     PubSub.publish("atguigu", { isFirst: false, isLoading: true });
 
     try {
-      const response = await fetch(`/api1/users?q=${keyWord}`);
+      const response = await fetch(
+        `http://api.github.com/search/users?q=${keyWord}`
+      );
       const data = await response.json();
       console.log(data, response, data.items.length);
       if (response.status === 200 && data.items.length > 0) {
