@@ -3,39 +3,48 @@ import PubSub from "pubsub-js";
 import axios from "axios";
 
 export default class Search extends Component {
-  async componentDidMount() {
-    await this.doSearch("atguigu");
-  }
-  async doSearch(keyWord) {
-    console.log(keyWord);
-    PubSub.publish("atguigu", { isFirst: false, isLoading: true });
-
-    try {
-      const response = await fetch(
-        `https://api.github.com/search/users?q=${keyWord}`
-      );
-      const data = await response.json();
-      if (response.status === 200 && data.items.length > 0) {
-        PubSub.publish("atguigu", {
-          isLoading: false,
-          users: data.items,
-        });
-      }
-    } catch (error) {
-      PubSub.publish("atguigu", {
-        isLoading: false,
-        err: error.message,
-      });
-    }
-  }
-
-  search = async () => {
+  search = () => {
     const {
       keyWordEle: { value: keyWord },
     } = this;
 
-    // await fetch
-    await this.doSearch(keyWord);
+    PubSub.publish("atguigu", { isFirst: false, isLoading: true });
+    axios.get(`https://api.github.com/search/users?q=${keyWord}`).then(
+      (response) => {
+        PubSub.publish("atguigu", {
+          isLoading: false,
+          users: response.data.items,
+          err: "",
+        });
+      },
+      (reason) => {
+        console.log("fail", reason);
+        PubSub.publish("atguigu", {
+          isLoading: false,
+          err: reason.message,
+        });
+      }
+    );
+
+    // try {
+    //   const response = await fetch(
+    //     `https://api.github.com/search/users?q=${keyWord}`
+    //   );
+    //   const data = await response.json();
+    //   if (response.status === 200 && data.items.length > 0) {
+    //     PubSub.publish("atguigu", {
+    //       isLoading: false,
+    //       users: data.items,
+    //     });
+    //   }
+    // } catch (error) {
+    //   PubSub.publish("atguigu", {
+    //     isLoading: false,
+    //     users: [],
+    //     err: error.message,
+    //   });
+    // }
+
     // fetch
     // fetch(`/api1/users?q=${keyWord}`)
     //   .then(
