@@ -3,8 +3,8 @@ import PubSub from "pubsub-js";
 import axios from "axios";
 
 export default class Search extends Component {
-  componentDidMount() {
-    this.doSearch("atguigu");
+  async componentDidMount() {
+    await this.doSearch("atguigu");
   }
   async doSearch(keyWord) {
     console.log(keyWord);
@@ -12,10 +12,9 @@ export default class Search extends Component {
 
     try {
       const response = await fetch(
-        `http://api.github.com/search/users?q=${keyWord}`
+        `https://api.github.com/search/users?q=${keyWord}`
       );
       const data = await response.json();
-      console.log(data, response, data.items.length);
       if (response.status === 200 && data.items.length > 0) {
         PubSub.publish("atguigu", {
           isLoading: false,
