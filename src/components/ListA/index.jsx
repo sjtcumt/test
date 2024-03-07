@@ -8,13 +8,12 @@ export default class ListA extends Component {
 
   componentDidMount() {
     PubSub.subscribe("atguigu", (_, stateObj) => {
+      console.log(stateObj);
       this.setState(stateObj);
     });
   }
   render() {
     const { users, isFirst, isLoading, err } = this.state;
-    console.log(this.props);
-
     return (
       <div>
         {isFirst ? (
@@ -23,6 +22,8 @@ export default class ListA extends Component {
           <h2>Loading...</h2>
         ) : err ? (
           <h2 style={{ color: "red" }}>{err}</h2>
+        ) : users.length === 0 ? (
+          <h2>No users</h2>
         ) : (
           users.map((user) => {
             return (

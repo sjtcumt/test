@@ -3,29 +3,72 @@ import PubSub from "pubsub-js";
 import axios from "axios";
 
 export default class Search extends Component {
-  search = () => {
+  componentDidMount() {
+    this.doSearch("atguigu");
+  }
+  async doSearch(keyWord) {
+    console.log(keyWord);
+    PubSub.publish("atguigu", { isFirst: false, isLoading: true });
+
+    try {
+      const response = await fetch(`/api1/users?q=${keyWord}`);
+      const data = await response.json();
+      console.log(data, response, data.items.length);
+      if (response.status === 200 && data.items.length > 0) {
+        PubSub.publish("atguigu", {
+          isLoading: false,
+          users: data.items,
+        });
+      }
+    } catch (error) {
+      PubSub.publish("atguigu", {
+        isLoading: false,
+        err: error.message,
+      });
+    }
+  }
+
+  search = async () => {
     const {
       keyWordEle: { value: keyWord },
     } = this;
 
-    PubSub.publish("atguigu", { isFirst: false, isLoading: true });
-    axios.get(`/api1/users?q=${keyWord}`).then(
-      (response) => {
-        PubSub.publish("atguigu", {
-          isLoading: false,
-          users: response.data.items,
-          err: "",
-        });
-      },
-      (reason) => {
-        console.log("fail", reason);
-        PubSub.publish("atguigu", {
-          isLoading: false,
-          err: reason.message,
-        });
-      }
-    );
+    // await fetch
+    await this.doSearch(keyWord);
+    // fetch
+    // fetch(`/api1/users?q=${keyWord}`)
+    //   .then(
+    //     (response) => {
+    //       console.log("Connect server success");
+    //       return response.json();
+    //     },
+    //     (reason) => {
+    //       console.log("Connect server fail");
+    //       console.log(reason);
+    //       return new Promise(() => {});
+    //     }
+    //   )
+    //   .then();
+
+    // axios
+    // axios.get(`/api1/users?q=${keyWord}`).then(
+    //   (response) => {
+    //     PubSub.publish("atguigu", {
+    //       isLoading: false,
+    //       users: response.data.items,
+    //       err: "",
+    //     });
+    //   },
+    //   (reason) => {
+    //     console.log("fail", reason);
+    //     PubSub.publish("atguigu", {
+    //       isLoading: false,
+    //       err: reason.message,
+    //     });
+    //   }
+    // );
   };
+
   render() {
     return (
       <section className="jumbotron">
