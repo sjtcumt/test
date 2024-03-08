@@ -11,6 +11,6 @@ export default function countReducer(preState = initState, action) {
     case DESC:
       return preState - data;
     default:
-      return 0;
+      return preState;
   }
 }

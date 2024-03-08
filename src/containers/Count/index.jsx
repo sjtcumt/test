@@ -2,11 +2,7 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import {
-  createAddAction,
-  createDescAction,
-  createAddAsyncAction,
-} from "../../redux/actions/count";
+import { add, desc, addAsync } from "../../redux/actions/count";
 
 function Count(props) {
   let selectNumber = null;
@@ -36,11 +32,10 @@ function Count(props) {
     props.addAsync(value * 1, 500);
   }
 
-  console.log(props);
   return (
     <div>
       <h1>Sum:{props.count}</h1>
-      <h1>AllPerson:{props.renshu}</h1>
+      <h1>AllPerson:{props.persons_count}</h1>
       <select
         ref={(c) => {
           selectNumber = c;
@@ -96,15 +91,15 @@ function Count(props) {
 //#endregion
 
 export default connect(
-  (state) => ({ count: state.he, renshu: state.rens.length }),
+  (state) => ({ count: state.count, persons_count: state.persons.length }),
   // (dispatch) => ({
   //   add: (number) => dispatch(createAddAction(number)),
   //   desc: (number) => dispatch(createDescAction(number)),
   //   addAsync: (number, time) => dispatch(createAddAsyncAction(number, time)),
   // })
   {
-    add: createAddAction,
-    desc: createDescAction,
-    addAsync: createAddAsyncAction,
+    add,
+    desc,
+    addAsync,
   }
 )(Count);

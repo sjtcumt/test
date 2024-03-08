@@ -4,24 +4,23 @@ import { connect } from "react-redux";
 
 import { nanoid } from "nanoid";
 
-import { createAddPersonAction } from "../../redux/actions/person";
+import { addPerson } from "../../redux/actions/person";
 
 export function Person(props) {
   let nameEle = null;
   let ageEle = null;
-  function AddPerson() {
+  function addPerson() {
     const name = nameEle.value;
     const age = ageEle.value;
-    console.log(name, age);
     const personObj = { id: nanoid(), name, age };
-    props.AddPerson(personObj);
+    props.addPerson(personObj);
     nameEle.value = "";
     ageEle.value = "";
   }
   return (
     <div>
       <h2>This is Person Coponent</h2>
-      <h2>sum:{props.sum_he}</h2>
+      <h2>sum:{props.count}</h2>
       <input
         ref={(c) => {
           nameEle = c;
@@ -36,9 +35,9 @@ export function Person(props) {
         type="text"
         placeholder="input age"
       />
-      <button onClick={AddPerson}>Add</button>
+      <button onClick={addPerson}>Add</button>
       <ul>
-        {props.yiduiren.map((ren) => {
+        {props.persons.map((ren) => {
           return (
             <li key={ren.id}>
               {ren.name}---{ren.age}
@@ -51,8 +50,8 @@ export function Person(props) {
 }
 
 export default connect(
-  (state) => ({ yiduiren: state.rens, sum_he: state.he }),
+  (state) => ({ persons: state.persons, count: state.count }),
   {
-    AddPerson: createAddPersonAction,
+    addPerson,
   }
 )(Person);

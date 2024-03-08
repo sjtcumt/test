@@ -1,13 +1,13 @@
 import { ADD, DESC } from "../constant";
 
-export const createAddAction = (data) => ({ type: ADD, data });
+export const add = (data) => ({ type: ADD, data });
 
-export const createDescAction = (data) => ({ type: DESC, data });
+export const desc = (data) => ({ type: DESC, data });
 
-export const createAddAsyncAction = (data, time) => {
+export const addAsync = (data, time) => {
   return (dispatch) => {
     setTimeout(() => {
-      dispatch(createAddAction(data));
+      dispatch(add(data));
     }, time);
   };
 };
