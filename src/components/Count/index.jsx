@@ -1,60 +1,59 @@
-import React, { Component } from "react";
+import React from "react";
 
 import store from "../../redux/store";
-import { createAddAction, createDescAction } from "../../redux/count_action";
+import {
+  createAddAction,
+  createDescAction,
+  createAddAsyncAction,
+} from "../../redux/count_action";
 
-export default class Count extends Component {
-  componentDidMount() {
-    store.subscribe(() => {
-      this.setState({});
-    });
+export default function Count(props) {
+  let selectNumber = null;
+
+  function add() {
+    const { value } = selectNumber;
+    props.add(value * 1);
+    //store.dispatch(createAddAction(value * 1));
   }
-  add = () => {
-    const { value } = this.selectNumber;
-    store.dispatch(createAddAction(value * 1));
-  };
 
   //   add = () => {
   //     const { value } = this.selectNumber;
   //     store.dispatch({ type: "add", data: value * 1 });
   //   };
-  desc = () => {
-    const { value } = this.selectNumber;
-    store.dispatch(createDescAction(value * 1));
-  };
-  addOdd = () => {
-    const { value } = this.selectNumber;
-    if (store.getState() % 2 !== 0) {
-      store.dispatch(createAddAction(value * 1));
-    }
-  };
-  addSync = () => {
-    const { value } = this.selectNumber;
-    setTimeout(() => {
-      store.dispatch(createAddAction(value * 1));
-    }, 500);
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>Sum:{store.getState()}</h1>
-        <select
-          ref={(c) => {
-            this.selectNumber = c;
-          }}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-        <button onClick={this.add}>+</button>
-        <button onClick={this.desc}>-</button>
-        <button onClick={this.addOdd}>add odd</button>
-        <button onClick={this.addSync}>add sync</button>
-      </div>
-    );
+  function desc() {
+    const { value } = selectNumber;
+    props.desc(value * 1);
   }
+  function addOdd() {
+    const { value } = selectNumber;
+    if (props.count % 2 !== 0) {
+      props.add(value * 1);
+    }
+  }
+  function addAsync() {
+    const { value } = selectNumber;
+    props.addAsync(value * 1, 500);
+  }
+
+  console.log(props);
+  return (
+    <div>
+      <h1>Sum:{props.count}</h1>
+      <select
+        ref={(c) => {
+          selectNumber = c;
+        }}
+      >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onClick={add}>+</button>
+      <button onClick={desc}>-</button>
+      <button onClick={addOdd}>add odd</button>
+      <button onClick={addAsync}>add sync</button>
+    </div>
+  );
 }
 
 // import React, { useState } from "react";

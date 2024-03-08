@@ -1,11 +1,12 @@
 import React from "react";
 
-import Count from "./components/Count";
+import Count from "./containers/Count";
+import store from "./redux/store";
 
 export default function AppCount() {
   return (
     <div>
-      <Count />
+      <Count store={store} />
     </div>
   );
 }
