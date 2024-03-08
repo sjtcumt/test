@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import AppCount from "./AppCount";
 
 import store from "./redux/store";
+import { Provider } from "react-redux";
 
 // import AppRouter from "./AppRouter";
 // import AppSearch from "./AppSearch";
@@ -13,18 +14,20 @@ const root = createRoot(document.getElementById("root")); // createRoot(containe
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AppCount />
-      {/* <AppSearch /> */}
+      <Provider store={store}>
+        <AppCount />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
-store.subscribe(() => {
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <AppCount />
-        {/* <AppSearch /> */}
-      </BrowserRouter>
-    </React.StrictMode>
-  );
-});
+
+// store.subscribe(() => {
+//   root.render(
+//     <React.StrictMode>
+//       <BrowserRouter>
+//         <AppCount />
+//         {/* <AppSearch /> */}
+//       </BrowserRouter>
+//     </React.StrictMode>
+//   );
+// });
