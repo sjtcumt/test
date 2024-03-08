@@ -1,7 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-export default class Home extends Component {
-  render() {
-    return <h3>This is Home content</h3>;
-  }
+import MyNavLink from "../../components/MyNavLink";
+
+export default function Home() {
+  // console.log(useOutlet());
+  return (
+    <div>
+      <h3>This is Home content</h3>
+      <ul className="list-group">
+        <li>
+          <MyNavLink to="news" end children="News" />
+        </li>
+        <li>
+          <MyNavLink to="message" end children="Message" />
+        </li>
+      </ul>
+      <hr></hr>
+      <Outlet />
+    </div>
+  );
 }
