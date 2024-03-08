@@ -36,11 +36,15 @@ export default [
         path: "news",
         element: <News />,
       },
+      {
+        path: "*",
+        element: <Message />,
+      },
     ],
   },
   {
     path: "/about",
     element: <About />,
   },
-  { path: "/", element: <Navigate to={<Home />} /> },
+  { path: "/", element: <Navigate to="/home/message/detail" /> },
 ];
