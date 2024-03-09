@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  /* background-color: #FEFEFE; */
+}
+
+.navbar_start {
+  flex: 1;
+  height: 50px;
+  text-align: left;
+  /* margin-left: 0; */
+  display: flex;
+  position: relative;
+}
+
+.nav_logo {
+  position: absolute;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  background: url(/images/logo.png) no-repeat;
+  background-size: 50px 50px;
+}
+
+/* 
+.nav-logo::before {
+  content: "\e901";
+  font-family: "icomoon";
+  padding-right: 10px;
+  color: #41666D;
+  font-size: 32px;
+} */
+
+
+
+.navbar_end {
+  height: 50px;
+  flex: 1;
+  line-height: 50px;
+  justify-content: space-between;
+}
+
+.navbar_end li {
+  float: right;
+  height: 50px;
+  width: 20px;
+  position: relative;
+  margin-right: 1.25rem;
+}
+
+.navbar_end li::before {
+  position: absolute;
+  content: "\e901";
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}

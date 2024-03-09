@@ -1,24 +1,11 @@
 import React, { Component } from "react";
 import PubSub from "pubsub-js";
-import axios from "axios";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.css";
 
-export default class ListA extends Component {
+export default class CardList extends Component {
   state = { users: [], isFirst: true, isLoading: false, err: "" };
-  search = () => {
-    axios.get(`https://api.github.com/search/users?q=atguigu`).then(
-      (response) => {
-        const users = response.data.items;
-        this.setState({ users, isFirst: false });
-      },
-      (reason) => {}
-    );
-  };
-
   componentDidMount() {
-    this.search();
-    PubSub.subscribe("atguigu", (_, stateObj) => {
+    PubSub.subscribe("search_results", (_, stateObj) => {
       console.log(stateObj);
       this.setState(stateObj);
     });

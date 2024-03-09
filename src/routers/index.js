@@ -1,12 +1,13 @@
 import { Navigate } from "react-router-dom";
 
 import Home from "../pages/Home";
-import About from "../pages/About";
 import Message from "../pages/Home/Message";
 import Detail from "../pages/Home/Message/Detail";
 import Detail02 from "../pages/Home/Message/Detail02";
 import Detail03 from "../pages/Home/Message/Detail03";
-import News from "../pages/Home/News";
+
+import SearchGithubUsers from "../components/Main/SearchGithubUsers";
+import MagicPuzzel from "../components/Main/MagicPuzzel";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
@@ -32,19 +33,16 @@ export default [
           },
         ],
       },
-      {
-        path: "news",
-        element: <News />,
-      },
-      {
-        path: "*",
-        element: <Message />,
-      },
     ],
   },
+
   {
-    path: "/about",
-    element: <About />,
+    path: "search_github_users",
+    element: <SearchGithubUsers />,
   },
-  { path: "/", element: <Navigate to="/home/message/detail" /> },
+  {
+    path: "magic_puzzel",
+    element: <MagicPuzzel />,
+  },
+  { path: "*", element: <Navigate to="search_github_users" /> },
 ];
