@@ -17,7 +17,7 @@ export default function DragBox(props) {
           <div
             key={`drag-${row}-${col}`}
             className={`grid-item_active`}
-            style={{ backgroundColor: style.backGroudcolor }}
+            style={{ backgroundColor: style.backGroundColor }}
           ></div>
         );
       }
@@ -31,21 +31,18 @@ export default function DragBox(props) {
 
   function createDragBoxCells() {
     const gridCells = [];
-    gridCells.push(createDragBoxRow(0));
-    for (let row = 1; row < data.length; row++) {
+    for (let row = 0; row < data.length; row++) {
       gridCells.push(createDragBoxRow(row));
-      for (let col = 0; col < data[row].length; col++) {}
     }
     return gridCells;
   }
   return (
     <div
-      key="drag_box01"
       className="drag_box"
       style={{
         ...props.style,
-        width: data.length + "rem",
-        height: data[0].length + "rem",
+        height: data.length + "rem",
+        width: data[0].length + "rem",
       }}
     >
       {createDragBoxCells()}

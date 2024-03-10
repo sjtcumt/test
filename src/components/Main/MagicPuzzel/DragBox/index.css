@@ -5,7 +5,6 @@
   /* width: 4rem; */
   border-collapse: collapse;
   /* cursor: move; */
-  z-index: 1x;
 }
 
 .drag_row {
