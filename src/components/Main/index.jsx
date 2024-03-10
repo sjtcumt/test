@@ -1,5 +1,5 @@
 import React from "react";
-import { AppstoreOutlined, MailOutlined } from "@ant-design/icons";
+import { AppstoreOutlined } from "@ant-design/icons";
 
 import { Menu } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ export default function Main() {
     <Menu
       onClick={OnClick}
       style={{
-        width: 256,
+        width: "100%",
       }}
       mode="vertical"
       items={items}

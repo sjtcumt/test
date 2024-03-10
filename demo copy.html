@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网页背景</title>
+    <style>
+      /* 设置网页背景 */
+      body {
+        background-image: linear-gradient(
+            transparent 39px,
+            black 39px,
+            black 40px
+          ),
+          linear-gradient(90deg, transparent 39px, black 39px, black 40px);
+        background-size: 40px 40px;
+      }
+
+      /* 使内容居中 */
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* 样式化方块 */
+      .drag-box {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        cursor: grab;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* 微软 logo 的四种颜色 */
+      .microsoft-blue {
+        background-color: #00a1f1; /* 蓝色 */
+      }
+
+      .microsoft-green {
+        background-color: #7cb721; /* 绿色 */
+      }
+
+      .microsoft-red {
+        background-color: #f65314; /* 红色 */
+      }
+
+      .microsoft-yellow {
+        background-color: #f0eb20; /* 黄色 */
+      }
+
+      /* 田字形分割区域 */
+      .top-left {
+        width: 100%;
+        height: 100%;
+      }
+
+      .top-right {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bottom-left {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bottom-right {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 方块元素 -->
+    <div class="drag-box">
+      <!-- 田字形分割区域，按照微软 logo 颜色配色 -->
+      <div class="top-left microsoft-blue"></div>
+      <div class="top-right microsoft-green"></div>
+      <div class="bottom-left microsoft-red"></div>
+      <div class="bottom-right microsoft-yellow"></div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="content">
+      <!-- 这里放置网页内容 -->
+      <h1>这是网页的内容</h1>
+    </div>
+
+    <script>
+      // 获取方块元素
+      var dragBox = document.querySelector(".drag-box");
+
+      // 初始化鼠标位置变量
+      var offsetX, offsetY;
+
+      // 鼠标按下事件
+      dragBox.addEventListener("mousedown", function (e) {
+        // 计算鼠标相对于方块左上角的偏移
+        offsetX = e.clientX - dragBox.offsetLeft;
+        offsetY = e.clientY - dragBox.offsetTop;
+
+        // 修改鼠标指针样式
+        dragBox.style.cursor = "grabbing";
+
+        // 绑定鼠标移动事件
+        document.addEventListener("mousemove", onMouseMove);
+      });
+
+      // 鼠标移动事件处理函数
+      function onMouseMove(e) {
+        // 计算方块的新位置
+        var x = e.clientX - offsetX;
+        var y = e.clientY - offsetY;
+
+        // 设置方块的新位置
+        dragBox.style.left = x + "px";
+        dragBox.style.top = y + "px";
+      }
+
+      // 鼠标松开事件
+      document.addEventListener("mouseup", function () {
+        // 四舍五入取整
+        dragBox.style.left =
+          Math.round(parseInt(dragBox.style.left) / 40) * 40 + "px";
+        dragBox.style.top =
+          Math.round(parseInt(dragBox.style.top) / 40) * 40 + "px";
+
+        // 恢复鼠标指针样式
+        dragBox.style.cursor = "grab";
+
+        // 移除鼠标移动事件监听器
+        document.removeEventListener("mousemove", onMouseMove);
+      });
+    </script>
+  </body>
+</html>

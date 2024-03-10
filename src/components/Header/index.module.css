@@ -4,6 +4,7 @@
   height: 50px;
   width: 100%;
   /* background-color: #FEFEFE; */
+  box-shadow: 0 2px 8px var(--card-shadow);
 }
 
 .navbar_start {

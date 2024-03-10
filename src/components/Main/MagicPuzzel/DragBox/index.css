@@ -1,0 +1,29 @@
+.drag_box {
+  /* margin: 1px; */
+  position: absolute;
+  /* height: 4rem; */
+  /* width: 4rem; */
+  border-collapse: collapse;
+  /* cursor: move; */
+  z-index: 1x;
+}
+
+.drag_row {
+  height: 1rem;
+}
+.grid-item_empty {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+}
+
+.grid-item_active {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+}
+
+/* 添加拖动时的样式 */
+.dragging {
+  cursor: grabbing !important;
+}

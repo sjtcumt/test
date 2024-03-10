@@ -1,0 +1,48 @@
+/* GridTable.css */
+
+.puzzel {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(22, 1rem);
+  grid-template-rows: repeat(17, 1rem);
+  border-collapse: collapse;
+  /* cursor: move; */
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  margin-left: -11rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.grid-item {
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 0.4rem;
+  cursor: ;
+}
+
+.grid-item_square {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: move;
+}
+
+.grid-item_today {
+  background-color: lightblue;
+  cursor: move;
+}
+
+/* 添加拖动时的样式 */
+.dragging {
+  cursor: grabbing !important;
+}
