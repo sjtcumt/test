@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/knight/static/css/main.4d0a6603.css",
-    "main.js": "/knight/static/js/main.1f642811.js",
+    "main.css": "/knight/static/css/main.8544f655.css",
+    "main.js": "/knight/static/js/main.da76ba16.js",
     "static/media/logo.png": "/knight/static/media/logo.c13474c677e46df14bce.png",
+    "static/media/demo.png": "/knight/static/media/demo.eef986f3e018b4d24fed.png",
     "static/media/icomoon.svg?ycs855": "/knight/static/media/icomoon.ca6336d81c52911a3d32.svg",
     "static/media/redux.cjs": "/knight/static/media/redux.7edfc461ab353f1712ab.cjs",
+    "static/media/rotate.png": "/knight/static/media/rotate.def17e0785eff92bd11a.png",
     "static/media/icomoon.eot?ycs855": "/knight/static/media/icomoon.d6daaa31baad9e5d6370.eot",
     "static/media/icomoon.woff?ycs855": "/knight/static/media/icomoon.f61e022e8fc045fb9659.woff",
     "static/media/icomoon.ttf?ycs855": "/knight/static/media/icomoon.8a48abbde3cea7a536d4.ttf",
     "index.html": "/knight/index.html",
-    "main.4d0a6603.css.map": "/knight/static/css/main.4d0a6603.css.map",
-    "main.1f642811.js.map": "/knight/static/js/main.1f642811.js.map"
+    "main.8544f655.css.map": "/knight/static/css/main.8544f655.css.map",
+    "main.da76ba16.js.map": "/knight/static/js/main.da76ba16.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d0a6603.css",
-    "static/js/main.1f642811.js"
+    "static/css/main.8544f655.css",
+    "static/js/main.da76ba16.js"
   ]
 }
