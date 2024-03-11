@@ -1,6 +1,5 @@
 .board {
   position: absolute;
-  /* background-color: pink; */
   height: 5rem;
   width: 10rem;
   left: calc(50%);
@@ -41,6 +40,6 @@
   cursor: move;
   background-color: skyblue;
   color: darkgoldenrod;
-  background: url(../../../../../images/star.png) no-repeat;
+  background: url(/images/star.png) no-repeat;
   background-size: 1rem 1rem;
 }

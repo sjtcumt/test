@@ -24,8 +24,7 @@ html {
 }
 
 body {
-  font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei",
-    STXihei, hei;
+  font: normal 14px/1.5;
   color: #000;
   background: #f2f2f2;
 }
@@ -36,10 +35,8 @@ body {
   width: 100%;
 }
 
-ul {
+li {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 a {

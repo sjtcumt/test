@@ -45,8 +45,3 @@
   width: 1rem;
   display: inline-block;
 }
-
-/* 添加拖动时的样式 */
-.dragging {
-  cursor: grabbing !important;
-}

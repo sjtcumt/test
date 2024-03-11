@@ -24,7 +24,6 @@
   grid-template-columns: repeat(22, 1rem);
   grid-template-rows: repeat(17, 1rem);
   border-collapse: collapse;
-  /* cursor: move; */
   position: absolute;
   left: 50%;
   top: 3rem;
@@ -40,9 +39,4 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
   font-size: 0.4rem;
-}
-
-/* 添加拖动时的样式 */
-.dragging {
-  cursor: grabbing !important;
 }
