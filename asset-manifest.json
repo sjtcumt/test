@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/knight/static/css/main.a68a9c8c.css",
-    "main.js": "/knight/static/js/main.6428483b.js",
+    "main.css": "/knight/static/css/main.c424d2b8.css",
+    "main.js": "/knight/static/js/main.8344aa0d.js",
     "static/media/logo.png": "/knight/static/media/logo.c13474c677e46df14bce.png",
     "static/media/puzzel_header.png": "/knight/static/media/puzzel_header.cf5ebc4d92c37b3b948f.png",
     "static/media/demo.png": "/knight/static/media/demo.eef986f3e018b4d24fed.png",
     "static/media/icomoon.svg?ycs855": "/knight/static/media/icomoon.322726709fbe2fb23ee5.svg",
-    "static/media/redux.cjs": "/knight/static/media/redux.7edfc461ab353f1712ab.cjs",
     "static/media/rotate.png": "/knight/static/media/rotate.def17e0785eff92bd11a.png",
     "static/media/icomoon.eot?ycs855": "/knight/static/media/icomoon.0393c8d214d667a39ba4.eot",
     "static/media/icomoon.woff?ycs855": "/knight/static/media/icomoon.f279c88550c3afed9c11.woff",
     "static/media/icomoon.ttf?ycs855": "/knight/static/media/icomoon.d0e1c37a87933471d20b.ttf",
     "index.html": "/knight/index.html",
-    "main.a68a9c8c.css.map": "/knight/static/css/main.a68a9c8c.css.map",
-    "main.6428483b.js.map": "/knight/static/js/main.6428483b.js.map"
+    "main.c424d2b8.css.map": "/knight/static/css/main.c424d2b8.css.map",
+    "main.8344aa0d.js.map": "/knight/static/js/main.8344aa0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a68a9c8c.css",
-    "static/js/main.6428483b.js"
+    "static/css/main.c424d2b8.css",
+    "static/js/main.8344aa0d.js"
   ]
 }
