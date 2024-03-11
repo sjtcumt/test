@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/knight/static/css/main.c424d2b8.css",
-    "main.js": "/knight/static/js/main.095a4e2d.js",
+    "main.js": "/knight/static/js/main.8d826cc5.js",
     "static/media/logo.png": "/knight/static/media/logo.c13474c677e46df14bce.png",
     "static/media/puzzel_header.png": "/knight/static/media/puzzel_header.cf5ebc4d92c37b3b948f.png",
     "static/media/demo.png": "/knight/static/media/demo.eef986f3e018b4d24fed.png",
@@ -12,10 +12,10 @@
     "static/media/icomoon.ttf?ycs855": "/knight/static/media/icomoon.d0e1c37a87933471d20b.ttf",
     "index.html": "/knight/index.html",
     "main.c424d2b8.css.map": "/knight/static/css/main.c424d2b8.css.map",
-    "main.095a4e2d.js.map": "/knight/static/js/main.095a4e2d.js.map"
+    "main.8d826cc5.js.map": "/knight/static/js/main.8d826cc5.js.map"
   },
   "entrypoints": [
     "static/css/main.c424d2b8.css",
-    "static/js/main.095a4e2d.js"
+    "static/js/main.8d826cc5.js"
   ]
 }
