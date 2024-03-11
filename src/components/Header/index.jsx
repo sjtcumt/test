@@ -6,6 +6,7 @@ export default function Header() {
     <div className={styles.header}>
       <div className={styles.navbar_start}>
         <div className={styles.nav_logo}></div>
+        <div>Alan's Blog</div>
       </div>
       <ul className={styles.navbar_end}>
         <li>
@@ -34,8 +35,7 @@ export default function Header() {
           >
             Leetcode
           </a>
-        </li>{" "}
-        *
+        </li>
       </ul>
     </div>
   );

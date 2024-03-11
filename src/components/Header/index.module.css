@@ -10,6 +10,7 @@
 .navbar_start {
   flex: 1;
   height: 50px;
+  line-height: 50px;
   text-align: left;
   /* margin-left: 0; */
   display: flex;

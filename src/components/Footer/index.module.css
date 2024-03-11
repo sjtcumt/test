@@ -1,5 +1,58 @@
 .footer {
-    height: 50px;
-    width: 100%;
-    box-shadow: 0 2px 8px var(--card-shadow);
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  position: relative;
+}
+
+.footer ul {
+  height: 50px;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer ul li {
+  float: right;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+}
+
+.footer ul li a {
+  float: right;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-indent: -9999px;
+}
+
+.footer ul li:nth-child(1)::before {
+  position: absolute;
+  content: "\eab0";
+  color: #444444;
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 30px;
+}
+
+.footer ul li:nth-child(2)::before {
+  position: absolute;
+  content: "\e90e";
+  color: #0077b6;
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 30px;
+}
+
+.footer ul li:nth-child(3)::before {
+  position: absolute;
+  content: "\e90d";
+  color: #f89f1c;
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 30px;
 }
