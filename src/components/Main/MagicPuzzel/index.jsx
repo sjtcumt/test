@@ -139,6 +139,7 @@ const boxes = [
 export default function MagicPuzzel() {
   return (
     <div className={styles.puzzel}>
+      <div className={styles.welcome}></div>
       <div className={styles.container}>
         {createGridCells()}
         <Board style={{ top: "1rem" }}></Board>
@@ -152,7 +153,7 @@ export default function MagicPuzzel() {
             ></DragBox>
           );
         })}
-        <Demo style={{ left: "12rem", top: "12rem" }}></Demo>
+        <Demo style={{ left: "12rem", top: "11rem" }}></Demo>
       </div>
     </div>
   );

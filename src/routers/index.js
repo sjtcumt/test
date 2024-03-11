@@ -13,5 +13,5 @@ export default [
     path: "magic_puzzel",
     element: <MagicPuzzel />,
   },
-  { path: "*", element: <Navigate to="search_github_users" /> },
+  { path: "*", element: <Navigate to="magic_puzzel" /> },
 ];

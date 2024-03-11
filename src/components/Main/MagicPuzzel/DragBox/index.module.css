@@ -14,9 +14,10 @@
   height: 0.5rem;
   width: 0.5rem;
   display: none;
-  background: url(../../../../../images/rotate.png) no-repeat;
+  background: url(/images/rotate.png) no-repeat;
   background-size: 0.5rem 0.5rem;
 }
+
 .button_flip {
   background: transparent;
   border: none;
@@ -26,7 +27,7 @@
   height: 0.5rem;
   width: 0.5rem;
   display: none;
-  background: url(../../../../../images/flip.png) no-repeat;
+  background: url(/images/flip.png) no-repeat;
   background-size: 0.5rem 0.5rem;
 }
 
