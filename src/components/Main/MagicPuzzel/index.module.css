@@ -6,6 +6,7 @@
   height: 100%;
   place-content: center;
   position: relative;
+  user-select: none;
 }
 
 .container {
@@ -29,17 +30,6 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
   font-size: 0.4rem;
-  cursor: ;
-}
-
-.grid-item_square {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: move;
-}
-
-.grid-item_today {
-  background-color: lightblue;
-  cursor: move;
 }
 
 /* 添加拖动时的样式 */

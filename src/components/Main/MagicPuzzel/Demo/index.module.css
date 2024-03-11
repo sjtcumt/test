@@ -1,0 +1,8 @@
+.demo {
+  position: absolute;
+  /* background-color: pink; */
+  height: 5rem;
+  width: 10rem;
+  background: url(../../../../../images/demo.png) no-repeat;
+  background-size: 10rem 5rem;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { nanoid } from "nanoid";
 
-import "./index.css";
+import styles from "./index.module.css";
 const boardData = [
   ["Jan", "Feb", "Mar", "1", "2", "3", "4", "5", "Mon", "Tue"],
   ["Apr", "May", "6", "7", "8", "9", "10", "11", "12", "Wed"],
@@ -21,15 +22,24 @@ function createBoardCells() {
   const gridCells = [];
   for (let row = 0; row < 5; row++) {
     for (let col = 0; col < 10; col++) {
-      gridCells.push(
-        <div
-          key={`board-${row}-${col}`}
-          className={`grid-item grid-item_square`}
-          //   value={boardData[row][col]}
-        >
-          {boardData[row][col]}
-        </div>
-      );
+      if (
+        boardData[row][col] === "" + currentDay ||
+        boardData[row][col] === currentMonth ||
+        boardData[row][col] ===
+          ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][currentWeekday]
+      ) {
+        gridCells.push(
+          <div key={nanoid()} className={styles["grid-item-today"]}>
+            {boardData[row][col]}
+          </div>
+        );
+      } else {
+        gridCells.push(
+          <div key={nanoid()} className={styles["grid-item-normal"]}>
+            {boardData[row][col]}
+          </div>
+        );
+      }
     }
   }
   return gridCells;
@@ -38,9 +48,9 @@ function createBoardCells() {
 export default class Board extends Component {
   render() {
     return (
-      <div className="board" style={{ ...this.props.style }}>
+      <button className={styles.board} style={{ ...this.props.style }}>
         {createBoardCells()}
-      </div>
+      </button>
     );
   }
 }

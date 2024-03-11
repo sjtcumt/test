@@ -53,6 +53,20 @@ function Count(props) {
   );
 }
 
+export default connect(
+  (state) => ({ count: state.count, persons_count: state.persons.length }),
+  // (dispatch) => ({
+  //   add: (number) => dispatch(createAddAction(number)),
+  //   desc: (number) => dispatch(createDescAction(number)),
+  //   addAsync: (number, time) => dispatch(createAddAsyncAction(number, time)),
+  // })
+  {
+    add,
+    desc,
+    addAsync,
+  }
+)(Count);
+
 //#region
 // import React, { useState } from "react";
 
@@ -89,17 +103,3 @@ function Count(props) {
 //   addAsync: (number, time) => dispatch(createAddAsyncAction(number, time)),
 // });
 //#endregion
-
-export default connect(
-  (state) => ({ count: state.count, persons_count: state.persons.length }),
-  // (dispatch) => ({
-  //   add: (number) => dispatch(createAddAction(number)),
-  //   desc: (number) => dispatch(createDescAction(number)),
-  //   addAsync: (number, time) => dispatch(createAddAsyncAction(number, time)),
-  // })
-  {
-    add,
-    desc,
-    addAsync,
-  }
-)(Count);
