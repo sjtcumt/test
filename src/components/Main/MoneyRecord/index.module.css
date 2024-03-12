@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  height: 10rem;
+}
+
+.sum {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.record {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  height: 50%;
+}

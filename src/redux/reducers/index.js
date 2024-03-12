@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import count from "./count";
-import persons from "./person";
-import shapes from "./shape";
+import amount from "./amount";
+import earns from "./earn";
+import spends from "./spend";
 
 export default combineReducers({
-  count,
-  persons,
-  shapes,
+  amount,
+  earns,
+  spends,
 });

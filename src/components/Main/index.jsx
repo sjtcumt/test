@@ -22,6 +22,7 @@ const items = [
     <AppstoreOutlined />,
     null
   ),
+  getItem("Money Record", "monery_record", <AppstoreOutlined />, null),
 ];
 
 export default function Main() {

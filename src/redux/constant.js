@@ -1,9 +1,4 @@
-export const ADD = "add";
-
-export const DESC = "desc";
-
-export const ADD_PERSON = "add_person";
-
-// shape action
-export const ROTATE = "rotate";
-export const FLIP = "flip";
+export const ADD_EARN = "add_earn";
+export const ADD_SPEND = "add_spend";
+export const ADD_AMOUNT = "add_amount";
+export const DESC_AMOUNT = "desc_amount";
