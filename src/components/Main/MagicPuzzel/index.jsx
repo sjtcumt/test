@@ -7,6 +7,7 @@ import { nanoid } from "nanoid";
 import Board from "./Board";
 import DragBox from "./DragBox";
 import Demo from "./Demo";
+import Challenge from "./Challenge";
 
 // 创建网格单元格
 function createGridCells() {
@@ -139,7 +140,7 @@ const boxes = [
 export default function MagicPuzzel() {
   return (
     <div className={styles.puzzel}>
-      <div className={styles.welcome}>Challenge Magic Puzzel</div>
+      <Challenge></Challenge>
       <div className={styles.container}>
         {createGridCells()}
         <Board style={{ top: "1rem" }}></Board>

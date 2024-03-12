@@ -7,22 +7,6 @@
   overflow: auto;
 }
 
-.welcome {
-  position: absolute;
-  top: 0.5rem;
-  left: 50%;
-  margin-left: -11rem;
-
-  height: 2rem;
-  width: 22rem;
-
-  color: white;
-  line-height: 2rem;
-  text-align: center;
-  font-size: 2rem;
-  background: linear-gradient(to top right, skyblue, pink);
-}
-
 .container {
   display: grid;
   grid-template-columns: repeat(22, 1rem);
