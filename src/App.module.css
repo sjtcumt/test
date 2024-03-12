@@ -63,7 +63,7 @@ div {
 .main_right {
   flex: 4;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0 2px 8px var(--card-shadow);
   padding: 10px;
 }

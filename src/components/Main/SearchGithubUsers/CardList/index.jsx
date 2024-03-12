@@ -20,7 +20,7 @@ export default function CardList() {
   });
 
   return (
-    <div>
+    <div className="container">
       {isFirst ? (
         <h2>Welcome</h2>
       ) : isLoading ? (
@@ -32,12 +32,12 @@ export default function CardList() {
       ) : (
         users.map((user) => {
           return (
-            <div key={user.id} className="card">
-              <a rel="noreferrer" href={user.html_url} target="_blank">
+            <a rel="noreferrer" href={user.html_url} target="_blank">
+              <div key={user.id} className="card">
                 <img src={user.avatar_url} alt="" style={{ width: "100px" }} />
-              </a>
-              <p className="card-text">{user.login}</p>
-            </div>
+                <p className="card-text">{user.login}</p>
+              </div>
+            </a>
           );
         })
       )}
