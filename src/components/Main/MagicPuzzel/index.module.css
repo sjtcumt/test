@@ -13,10 +13,15 @@
   top: 0.5rem;
   left: 50%;
   margin-left: -11rem;
-  height: 3rem;
+
+  height: 2rem;
   width: 22rem;
-  background: url(/images/puzzel_header.png) no-repeat;
-  background-size: contain;
+
+  color: white;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(skyblue, pink);
 }
 
 .container {

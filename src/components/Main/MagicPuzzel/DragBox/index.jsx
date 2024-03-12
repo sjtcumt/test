@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { forwardRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { nanoid } from "nanoid";
 
@@ -7,8 +6,35 @@ import styles from "./index.module.css";
 
 const transpose = (m) => m[0].map((x, i) => m.map((x) => x[i]).reverse());
 
-export default forwardRef(function DragBox(props, ref) {
+export default function DragBox(props, ref) {
   const [data, setData] = useState([...props.data]);
+
+  function rotate() {
+    var newdata = transpose(data);
+    setData([...newdata]);
+  }
+
+  function flip() {
+    var newdata = data.map((row) => row.reverse());
+    setData([...newdata]);
+  }
+
+  useEffect(() => {
+    console.log("Component will mount");
+    var newdata = [...data];
+    for (let c = 0; c < parseInt(props.rCnt); c++) {
+      let tmp = transpose(newdata);
+      newdata = [...tmp];
+    }
+    for (let c = 0; c < parseInt(props.fCnt); c++) {
+      let tmp = newdata.map((row) => row.reverse());
+      newdata = [...tmp];
+    }
+    setData(newdata);
+    return () => {
+      console.log("Component will unmount");
+    };
+  }, []); // 第二个参数是空数组，表示只在组件挂载和卸载时执行
 
   var btnFlip = null;
   var btnRotate = null;
@@ -47,8 +73,8 @@ export default forwardRef(function DragBox(props, ref) {
     }
     const x = e.clientX - left;
     const y = e.clientY - top;
-    dragbox.style.left = `${x / 40}rem`;
-    dragbox.style.top = `${y / 40}rem`;
+    dragbox.style.left = `${x / 30}rem`;
+    dragbox.style.top = `${y / 30}rem`;
   };
 
   function onMouseUp() {
@@ -61,16 +87,6 @@ export default forwardRef(function DragBox(props, ref) {
     }
     dragbox.style.left = `${Math.round(parseFloat(dragbox.style.left) * 1)}rem`;
     dragbox.style.top = `${Math.round(parseFloat(dragbox.style.top) * 1)}rem`;
-  }
-
-  function rotate() {
-    var newdata = transpose(data);
-    setData([...newdata]);
-  }
-
-  function flip() {
-    var newdata = data.map((row) => row.reverse());
-    setData([...newdata]);
   }
 
   function createDragBoxRow(row, index) {
@@ -141,4 +157,4 @@ export default forwardRef(function DragBox(props, ref) {
       })}
     </div>
   );
-});
+}

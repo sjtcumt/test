@@ -15,31 +15,29 @@
   justify-content: space-around;
 }
 
-.footer ul li {
-  float: right;
+.footer ul a li {
+  position: relative;
+}
+
+.footer ul a li {
+  display: block;
   height: 50px;
   width: 50px;
   line-height: 50px;
 }
 
-.footer ul li a {
-  float: right;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-indent: -9999px;
-}
-
-.footer ul li:nth-child(1)::before {
+.footer ul a:nth-child(1) li::before {
   position: absolute;
   content: "\eab0";
   color: #444444;
   align-items: center;
   font-family: "icomoon";
   font-size: 30px;
+  height: 30px;
+  width: 30px;
 }
 
-.footer ul li:nth-child(2)::before {
+.footer ul a:nth-child(2) li::before {
   position: absolute;
   content: "\e90e";
   color: #0077b6;
@@ -48,7 +46,7 @@
   font-size: 30px;
 }
 
-.footer ul li:nth-child(3)::before {
+.footer ul a:nth-child(3) li::before {
   position: absolute;
   content: "\e90d";
   color: #f89f1c;

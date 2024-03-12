@@ -139,7 +139,7 @@ const boxes = [
 export default function MagicPuzzel() {
   return (
     <div className={styles.puzzel}>
-      <div className={styles.welcome}></div>
+      <div className={styles.welcome}>Challenge Magic Puzzel</div>
       <div className={styles.container}>
         {createGridCells()}
         <Board style={{ top: "1rem" }}></Board>
@@ -154,6 +154,75 @@ export default function MagicPuzzel() {
           );
         })}
         <Demo style={{ left: "12rem", top: "11rem" }}></Demo>
+        <Board
+          style={{ left: "17rem", top: "12rem" }}
+          setM="Mar"
+          setW="1"
+          setD="11"
+        ></Board>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[0].style, left: "12rem", top: "12rem" }}
+          data={boxes[0].data}
+          rCnt={0}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[1].style, left: "12rem", top: "14rem" }}
+          data={boxes[1].data}
+          rCnt={1}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[2].style, left: "18rem", top: "13rem" }}
+          data={boxes[2].data}
+          rCnt={0}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[3].style, left: "17rem", top: "12rem" }}
+          data={boxes[3].data}
+          rCnt={0}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[4].style, left: "14rem", top: "14rem" }}
+          data={boxes[4].data}
+          rCnt={0}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[5].style, left: "15rem", top: "15rem" }}
+          data={boxes[5].data}
+          rCnt={2}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[6].style, left: "18rem", top: "15rem" }}
+          data={boxes[6].data}
+          rCnt={2}
+          fCnt={1}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[7].style, left: "15rem", top: "12rem" }}
+          data={boxes[7].data}
+          rCnt={0}
+          fCnt={0}
+        ></DragBox>
+        <DragBox
+          key={nanoid()}
+          style={{ ...boxes[8].style, left: "20rem", top: "12rem" }}
+          data={boxes[8].data}
+          rCnt={1}
+          fCnt={1}
+        ></DragBox>
       </div>
     </div>
   );

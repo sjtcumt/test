@@ -14,8 +14,16 @@
   height: 0.5rem;
   width: 0.5rem;
   display: none;
-  background: url(/images/rotate.png) no-repeat;
-  background-size: 0.5rem 0.5rem;
+}
+.button_rotate::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "\e90f";
+  color: #6d6464;
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 0.5rem;
 }
 
 .button_flip {
@@ -27,8 +35,16 @@
   height: 0.5rem;
   width: 0.5rem;
   display: none;
-  background: url(/images/flip.png) no-repeat;
-  background-size: 0.5rem 0.5rem;
+}
+.button_flip::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "\e910";
+  color: #6d6464;
+  align-items: center;
+  font-family: "icomoon";
+  font-size: 0.5rem;
 }
 
 .drag-row {
