@@ -8,8 +8,9 @@ export default function Demo(props) {
       <div className={styles.demo_desc}>Demo : Monday, March 11, 2024</div>
       <a
         className={styles.answer}
-        href="https://go.dev/play/p/AI9np8TuiH5"
-        target="_black"
+        href="https://go.dev/play/p/PhcMuRAwL32"
+        target="_blank"
+        rel="noreferrer"
       >
         Answer
       </a>
