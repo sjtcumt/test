@@ -21,7 +21,7 @@ export default function DragBox(props, ref) {
 
   useEffect(() => {
     console.log("Component will mount");
-    var newdata = [...data];
+    var newdata = [...props.data];
     for (let c = 0; c < parseInt(props.rCnt); c++) {
       let tmp = transpose(newdata);
       newdata = [...tmp];
@@ -34,7 +34,7 @@ export default function DragBox(props, ref) {
     return () => {
       console.log("Component will unmount");
     };
-  }, []); // 第二个参数是空数组，表示只在组件挂载和卸载时执行
+  }, [props.data, props.fCnt, props.rCnt]); // 第二个参数是空数组，表示只在组件挂载和卸载时执行
 
   var btnFlip = null;
   var btnRotate = null;

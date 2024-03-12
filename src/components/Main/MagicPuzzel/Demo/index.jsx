@@ -1,5 +1,4 @@
 import React from "react";
-import { nanoid } from "nanoid";
 
 import styles from "./index.module.css";
 
