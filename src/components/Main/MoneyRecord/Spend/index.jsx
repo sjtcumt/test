@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { nanoid } from "nanoid";
 
-import { addSpend } from "../../../../redux/actions/spend";
+import { addSpend, addSpendAmount } from "../../../../redux/actions/spend";
 import { descAmount } from "../../../../redux/actions/amount";
 
 import styles from "./index.module.css";
@@ -18,11 +18,12 @@ export function Spend(props) {
     const earnObj = { id: nanoid(), name, amount };
     props.addSpend(earnObj);
     props.descAmount(amount);
+    props.addSpendAmount(amount);
   }
 
   return (
     <div className={styles.spend}>
-      <div>Spend Amount:{props.amount}</div>
+      <div>Spend Amount:{props.spend_amount}</div>
       <input
         ref={(c) => {
           nameEle = c;
@@ -56,11 +57,17 @@ export function Spend(props) {
 export default connect(
   (state) => ({
     amount: state.amount,
-    earns: state.earns,
-    spends: state.spends,
+    earns: state.earnReducer,
+    spends: state.spendReducer,
+    spend_amount: state.spendAmountReducer,
   }),
-  {
-    addSpend,
-    descAmount,
-  }
+  (dispatch) => ({
+    addSpend: (data) => dispatch(addSpend(data)),
+    addSpendAmount: (data) => dispatch(addSpendAmount(data)),
+    descAmount: (number) => dispatch(descAmount(number)),
+  })
+  // {
+  //   addSpend,
+  //   descAmount,
+  // }
 )(Spend);

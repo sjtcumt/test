@@ -1,8 +1,8 @@
-import { ADD_SPEND } from "../constant";
+import { ADD_SPEND, ADD_SPEND_AMOUNT } from "../constant";
 
 const initState = [{ id: "002", name: "food", amount: 4 }];
 
-export default function earnReducer(preState = initState, action) {
+export function spendReducer(preState = initState, action) {
   const { type, data } = action;
 
   switch (type) {
@@ -12,3 +12,19 @@ export default function earnReducer(preState = initState, action) {
       return preState;
   }
 }
+
+const initAmount = 4;
+export function spendAmountReducer(preState = initAmount, action) {
+  const { type, data } = action;
+
+  switch (type) {
+    case ADD_SPEND_AMOUNT:
+      return preState + data * 1;
+    default:
+      return preState;
+  }
+}
+// export default module.exports = {
+//   spendReducer: spendReducer,
+//   spendAmountReducer: spendAmountReducer,
+// };

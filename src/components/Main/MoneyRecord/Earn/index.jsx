@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { nanoid } from "nanoid";
 
-import { addEarn } from "../../../../redux/actions/earn";
+import { addEarn, addEarnAmount } from "../../../../redux/actions/earn";
 import { addAmount } from "../../../../redux/actions/amount";
 
 import styles from "./index.module.css";
@@ -18,11 +18,12 @@ export function Earn(props) {
     const earnObj = { id: nanoid(), name, amount };
     props.addEarn(earnObj);
     props.addAmount(amount);
+    props.addEarnAmount(amount);
   }
 
   return (
     <div className={styles.earn}>
-      <div>Earn Amount:{props.amount}</div>
+      <div>Earn Amount:{props.earn_amount}</div>
       <input
         ref={(c) => {
           nameEle = c;
@@ -56,11 +57,17 @@ export function Earn(props) {
 export default connect(
   (state) => ({
     amount: state.amount,
-    earns: state.earns,
-    spends: state.spends,
+    earns: state.earnReducer,
+    spends: state.spendReducer,
+    earn_amount: state.earnAmountReducer,
   }),
-  {
-    addEarn,
-    addAmount,
-  }
+  (dispatch) => ({
+    addEarn: (number) => dispatch(addEarn(number)),
+    addAmount: (number) => dispatch(addAmount(number)),
+    addEarnAmount: (data) => dispatch(addEarnAmount(data)),
+  })
+  // {
+  //   addEarn,
+  //   addAmount,
+  // }
 )(Earn);

@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 
 import amount from "./amount";
-import earns from "./earn";
-import spends from "./spend";
+import { earnReducer, earnAmountReducer } from "./earn";
+import { spendReducer, spendAmountReducer } from "./spend";
 
 export default combineReducers({
   amount,
-  earns,
-  spends,
+  earnReducer,
+  spendReducer,
+  earnAmountReducer,
+  spendAmountReducer,
 });
