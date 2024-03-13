@@ -9,6 +9,17 @@ const transpose = (m) => m[0].map((x, i) => m.map((x) => x[i]).reverse());
 export default function DragBox(props, ref) {
   const [data, setData] = useState([...props.data]);
 
+  useEffect(() => {
+    var newdata = [...props.data];
+    for (let c = 0; c < parseInt(props.rCnt); c++) {
+      newdata = transpose(newdata);
+    }
+    for (let c = 0; c < parseInt(props.fCnt); c++) {
+      newdata = newdata.map((row) => row.reverse());
+    }
+    setData(newdata);
+  }, [props.data, props.fCnt, props.rCnt]); // 第二个参数是空数组，表示只在组件挂载和卸载时执行
+
   function rotate() {
     var newdata = transpose(data);
     setData([...newdata]);
@@ -18,23 +29,6 @@ export default function DragBox(props, ref) {
     var newdata = data.map((row) => row.reverse());
     setData([...newdata]);
   }
-
-  useEffect(() => {
-    console.log("Component will mount");
-    var newdata = [...props.data];
-    for (let c = 0; c < parseInt(props.rCnt); c++) {
-      let tmp = transpose(newdata);
-      newdata = [...tmp];
-    }
-    for (let c = 0; c < parseInt(props.fCnt); c++) {
-      let tmp = newdata.map((row) => row.reverse());
-      newdata = [...tmp];
-    }
-    setData(newdata);
-    return () => {
-      console.log("Component will unmount");
-    };
-  }, [props.data, props.fCnt, props.rCnt]); // 第二个参数是空数组，表示只在组件挂载和卸载时执行
 
   var btnFlip = null;
   var btnRotate = null;

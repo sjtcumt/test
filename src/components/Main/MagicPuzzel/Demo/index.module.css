@@ -2,6 +2,7 @@
   position: absolute;
   height: 6rem;
   width: 10rem;
+  user-select: none;
 }
 
 .demo_desc {
