@@ -4,7 +4,7 @@ import SearchGithubUsers from "../components/Main/SearchGithubUsers";
 import MagicPuzzel from "../components/Main/MagicPuzzel";
 import MoneyRecord from "../components/Main/MoneyRecord";
 import Blog from "../components/Blog";
-import Snake from "../components/Main/Snake";
+import GreedySnake from "../components/Main/GreedySnake";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
@@ -21,8 +21,8 @@ export default [
     element: <MoneyRecord />,
   },
   {
-    path: "snake_eat",
-    element: <Snake />,
+    path: "greedy_snake",
+    element: <GreedySnake />,
   },
   {
     path: "blog/:fileName",
