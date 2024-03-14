@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 const Blog = () => {
   const { fileName } = useParams();
   console.log(fileName);
-  const filePath = "/markdowns/" + fileName + ".md";
+  const filePath = "/knight/markdowns/" + fileName + ".md";
 
   const [mdContent, setMdContent] = useState("");
 

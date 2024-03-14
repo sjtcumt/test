@@ -13,7 +13,7 @@ export function earnReducer(preState = initState, action) {
   }
 }
 
-const initAmount = 10;
+const initAmount = 9;
 export function earnAmountReducer(preState = initAmount, action) {
   const { type, data } = action;
 
