@@ -37,7 +37,6 @@ export default function Main() {
   return (
     <Menu
       onClick={OnClick}
-      blog
       style={{
         width: "100%",
       }}

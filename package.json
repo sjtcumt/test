@@ -39,6 +39,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://tyler-fft.github.io/knight",
   "browserslist": {
     "production": [
       ">0.2%",

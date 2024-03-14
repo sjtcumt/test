@@ -5,8 +5,9 @@ import ReactMarkdown from "react-markdown";
 
 const Blog = () => {
   const { fileName } = useParams();
+  console.log(fileName);
   const filePath = "/markdowns/" + fileName + ".md";
-  console.log(filePath);
+
   const [mdContent, setMdContent] = useState("");
 
   useEffect(() => {
@@ -18,7 +19,6 @@ const Blog = () => {
         }
         const markdownText = await response.text();
         setMdContent(markdownText);
-        console.log(markdownText);
       } catch (error) {
         console.error("Error fetching Markdown file:", error);
       }
