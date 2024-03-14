@@ -1,33 +1,31 @@
 {
-    "include": [
-        "./part01/**/*"
-    ],
-    "exclude": [
-        // "./part01/01_hello.ts"
-    ],
-    // "extends":
+  "include": ["src/**/*", "webpack.config.js"],
+  "exclude": [
+    // "./part01/01_hello.ts"
+  ],
+  // "extends":
 
-    "compilerOptions": {
-        // "target": "ES6",
-        // "module": "ES6",
-        // "lib": []
-        "outDir": "./dist",
-        "outFile": "./dist/app.js",
-        // "allowJs": true,
-        // "checkJs": true,
-        // "removeComments": false,
-        // "noEmit": true,
+  "compilerOptions": {
+    // "target": "ES6",
+    // "module": "ES6",
+    // "lib": []
+    "outDir": "./dist",
+    // "outFile": "./dist/app.js",
+    // "allowJs": true,
+    // "checkJs": true,
+    // "removeComments": false,
+    // "noEmit": true,
 
-        "noEmitOnError": true,
+    "noEmitOnError": true,
 
-        "alwaysStrict": true,
+    "alwaysStrict": true,
 
-        "noImplicitAny": true,
+    "noImplicitAny": true,
 
-        "noImplicitThis": true,
+    "noImplicitThis": true,
 
-        "strictNullChecks": true,
-        
-        "strict": true,
-    }
+    "strictNullChecks": true,
+
+    "strict": true
+  }
 }

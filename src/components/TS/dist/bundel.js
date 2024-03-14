@@ -1,0 +1,1 @@
+(()=>{"use strict";var e,l;console.log("hello TS"),console.log("male"),console.log(!1),function(e){e[e.Male=0]="Male",e[e.Female=1]="Female"}(e||(e={})),l={name:"ss",gender:e.Male},console.log(l)})();

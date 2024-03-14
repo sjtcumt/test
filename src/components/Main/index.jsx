@@ -16,6 +16,7 @@ function getItem(label, key, icon, children, type) {
 
 const items = [
   getItem("Magic Puzzel", "magic_puzzel", <AppstoreOutlined />, null),
+  getItem("Eat Snake", "snake_eat", <AppstoreOutlined />, null),
   getItem(
     "Search Github Users",
     "search_github_users",
