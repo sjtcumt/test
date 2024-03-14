@@ -23,6 +23,8 @@ const items = [
     null
   ),
   getItem("Money Record", "monery_record", <AppstoreOutlined />, null),
+
+  getItem("blog", "blog", <AppstoreOutlined />, [getItem("TS", "blog/ts")]),
 ];
 
 export default function Main() {
@@ -35,6 +37,7 @@ export default function Main() {
   return (
     <Menu
       onClick={OnClick}
+      blog
       style={{
         width: "100%",
       }}
