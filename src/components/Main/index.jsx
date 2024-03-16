@@ -24,7 +24,7 @@ const items = [
     null
   ),
   getItem("Money Record", "monery_record", <AppstoreOutlined />, null),
-
+  getItem("Finance Dashboard", "finance_dashboard", <AppstoreOutlined />, null),
   getItem("blog", "blog", <AppstoreOutlined />, [getItem("TS", "blog/ts")]),
 ];
 

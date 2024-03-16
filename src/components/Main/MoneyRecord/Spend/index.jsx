@@ -1,13 +1,14 @@
 import React from "react";
-
+import { Button } from "antd";
 import { connect } from "react-redux";
-
 import { nanoid } from "nanoid";
 
 import { addSpend, addSpendAmount } from "../../../../redux/actions/spend";
 import { descAmount } from "../../../../redux/actions/amount";
 
 import styles from "./index.module.css";
+
+import { InputNumber, Input } from "antd";
 
 export function Spend(props) {
   let nameEle = null;
@@ -24,21 +25,25 @@ export function Spend(props) {
   return (
     <div className={styles.spend}>
       <div>Spend Amount:{props.spend_amount}</div>
-      <input
+      <Input
         ref={(c) => {
           nameEle = c;
         }}
+        style={{ width: 200 }}
         type="text"
-        placeholder="input source name"
+        placeholder="book"
       />
-      <input
+      <InputNumber
         ref={(c) => {
           amountEle = c;
         }}
-        type="text"
-        placeholder="input amount"
+        min={1}
+        max={1000}
+        defaultValue={5}
       />
-      <button onClick={addEarn}>Add</button>
+      <Button type="primary" onClick={addEarn}>
+        Add
+      </Button>
       <div className={styles.records}>
         <ul>
           {props.spends.map((obj) => {

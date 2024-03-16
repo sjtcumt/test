@@ -5,6 +5,7 @@ import MagicPuzzel from "../components/Main/MagicPuzzel";
 import MoneyRecord from "../components/Main/MoneyRecord";
 import Blog from "../components/Blog";
 import GreedySnake from "../components/Main/GreedySnake";
+import FinanceDashboard from "../components/Main/FinanceDashboard";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
@@ -27,6 +28,10 @@ export default [
   {
     path: "blog/:fileName",
     element: <Blog />,
+  },
+  {
+    path: "finance_dashboard",
+    element: <FinanceDashboard />,
   },
   { path: "*", element: <Navigate to="magic_puzzel" /> },
 ];

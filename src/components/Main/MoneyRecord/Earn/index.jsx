@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Button, Flex } from "antd";
 import { connect } from "react-redux";
 
 import { nanoid } from "nanoid";
@@ -8,7 +8,10 @@ import { addEarn, addEarnAmount } from "../../../../redux/actions/earn";
 import { addAmount } from "../../../../redux/actions/amount";
 
 import styles from "./index.module.css";
+import { InputNumber } from "antd";
 
+import { Input } from "antd";
+import Column from "antd/es/table/Column";
 export function Earn(props) {
   let nameEle = null;
   let amountEle = null;
@@ -24,21 +27,27 @@ export function Earn(props) {
   return (
     <div className={styles.earn}>
       <div>Earn Amount:{props.earn_amount}</div>
-      <input
-        ref={(c) => {
-          nameEle = c;
-        }}
-        type="text"
-        placeholder="input source name"
-      />
-      <input
-        ref={(c) => {
-          amountEle = c;
-        }}
-        type="text"
-        placeholder="input amount"
-      />
-      <button onClick={addEarn}>Add</button>
+      <div style={{ display: Flex, flexDirection: Column }}>
+        <Input
+          ref={(c) => {
+            nameEle = c;
+          }}
+          style={{ width: 200 }}
+          type="text"
+          placeholder="salary"
+        />
+        <InputNumber
+          ref={(c) => {
+            amountEle = c;
+          }}
+          min={1}
+          max={1000}
+          defaultValue={100}
+        />
+        <Button type="primary" onClick={addEarn}>
+          Add
+        </Button>
+      </div>
       <div className={styles.records}>
         <ul>
           {props.earns.map((obj) => {
