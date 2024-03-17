@@ -44,6 +44,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://tyler-fft.github.io/",
   "browserslist": {
     "production": [
       ">0.2%",
