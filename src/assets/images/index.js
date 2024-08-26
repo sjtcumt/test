@@ -27,6 +27,7 @@ import skill8 from "./skill8.png";
 
 import project1 from "./project1.png";
 import project2 from "./project2.png";
+import project3 from "./project3.png";
 
 import thumbnailBackground from "./thumbnail-background.svg";
 import thumbnailShoe1 from "./thumbnail-shoe1.png";
@@ -61,4 +62,5 @@ export {
   skill8,
   project1,
   project2,
+  project3,
 };

@@ -29,6 +29,7 @@ import {
   skill8,
   project1,
   project2,
+  project3,
 } from "../assets/images";
 
 export const navLinks = [
@@ -79,14 +80,21 @@ export const projects = [
     imgURL: project2,
     description: "",
     demoURL: "https://tylerfft-magic-puzzle.vercel.app/",
-    codeURL: "https://github.com/tylerfft/magic_puzzle",
+    codeURL: "https://github.com/tylerfft/magic-puzzle",
   },
   {
     name: "SVG NFT",
     imgURL: project1,
     description: "",
-    demoURL: "https://tylerfft-nft.vercel.app/",
+    demoURL: "https://tylerfft-svg-nft.vercel.app/",
     codeURL: "https://github.com/tylerfft/svg-nft",
+  },
+  {
+    name: "Social Media App",
+    imgURL: project3,
+    description: "",
+    demoURL: "https://github.com/tylerfft/social-media-app",
+    codeURL: "https://tylerfft-social-media-app.vercel.app",
   },
 ];
 
